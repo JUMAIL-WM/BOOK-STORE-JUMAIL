@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc8b7735e3934ac5878315636ff86a6b" Name="Diagram1">
+        <EntityTypeShape EntityType="Jumail_ProjectModel.Add_Expence_Table" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.Add_NewBook_Table" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.Add_Stock_Table" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.Finish_Order_Table" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.Login_Table" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.UC_ManageExpence_Table" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.UC_ManageUser_Table" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Jumail_ProjectModel.UC_Sales_Table" Width="1.5" PointX="6.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

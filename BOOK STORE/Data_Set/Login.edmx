@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Jumail_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Add_Expence_Table">
+          <Key>
+            <PropertyRef Name="Expence_Title" />
+          </Key>
+          <Property Name="Expence_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Add_NewBook_Table">
+          <Key>
+            <PropertyRef Name="Tracking_ID" />
+          </Key>
+          <Property Name="Tracking_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Publisher" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Selling_Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+          <Property Name="Book_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Cost_Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bar_Code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Add_Stock_Table">
+          <Key>
+            <PropertyRef Name="Tracking_ID" />
+          </Key>
+          <Property Name="Tracking_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Existing_Stock" Type="nvarchar" MaxLength="50" />
+          <Property Name="New_Stock" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total_Stock" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cost" Type="nvarchar" MaxLength="50" />
+          <Property Name="Selling_Price" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Finish_Order_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Net_Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total_Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Paid_Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Balance_Amount" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Login_Table">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UC_ManageExpence_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Expence_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UC_ManageUser_Table">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="NIC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UC_Sales_Table">
+          <Key>
+            <PropertyRef Name="Bar_Code" />
+          </Key>
+          <Property Name="Bar_Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Book_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Publisher" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tracking_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discount" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Jumail_ProjectModelStoreContainer">
+          <EntitySet Name="Add_Expence_Table" EntityType="Self.Add_Expence_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Add_NewBook_Table" EntityType="Self.Add_NewBook_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Add_Stock_Table" EntityType="Self.Add_Stock_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Finish_Order_Table" EntityType="Self.Finish_Order_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Table" EntityType="Self.Login_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UC_ManageExpence_Table" EntityType="Self.UC_ManageExpence_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UC_ManageUser_Table" EntityType="Self.UC_ManageUser_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UC_Sales_Table" EntityType="Self.UC_Sales_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Jumail_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Jumail_ProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Add_Expence_Table" EntityType="Jumail_ProjectModel.Add_Expence_Table" />
+          <EntitySet Name="Add_NewBook_Table" EntityType="Jumail_ProjectModel.Add_NewBook_Table" />
+          <EntitySet Name="Add_Stock_Table" EntityType="Jumail_ProjectModel.Add_Stock_Table" />
+          <EntitySet Name="Finish_Order_Table" EntityType="Jumail_ProjectModel.Finish_Order_Table" />
+          <EntitySet Name="Login_Table" EntityType="Jumail_ProjectModel.Login_Table" />
+          <EntitySet Name="UC_ManageExpence_Table" EntityType="Jumail_ProjectModel.UC_ManageExpence_Table" />
+          <EntitySet Name="UC_ManageUser_Table" EntityType="Jumail_ProjectModel.UC_ManageUser_Table" />
+          <EntitySet Name="UC_Sales_Table" EntityType="Jumail_ProjectModel.UC_Sales_Table" />
+        </EntityContainer>
+        <EntityType Name="Add_Expence_Table">
+          <Key>
+            <PropertyRef Name="Expence_Title" />
+          </Key>
+          <Property Name="Expence_Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Add_NewBook_Table">
+          <Key>
+            <PropertyRef Name="Tracking_ID" />
+          </Key>
+          <Property Name="Tracking_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Selling_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Book_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Cost_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bar_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Add_Stock_Table">
+          <Key>
+            <PropertyRef Name="Tracking_ID" />
+          </Key>
+          <Property Name="Tracking_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Existing_Stock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="New_Stock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Stock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Selling_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Finish_Order_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Net_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paid_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Balance_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login_Table">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UC_ManageExpence_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Expence_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UC_ManageUser_Table">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UC_Sales_Table">
+          <Key>
+            <PropertyRef Name="Bar_Code" />
+          </Key>
+          <Property Name="Bar_Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Book_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tracking_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Jumail_ProjectModelStoreContainer" CdmEntityContainer="Jumail_ProjectEntities">
+          <EntitySetMapping Name="Add_Expence_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.Add_Expence_Table">
+              <MappingFragment StoreEntitySet="Add_Expence_Table">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Expence_Title" ColumnName="Expence_Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Add_NewBook_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.Add_NewBook_Table">
+              <MappingFragment StoreEntitySet="Add_NewBook_Table">
+                <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
+                <ScalarProperty Name="Cost_Price" ColumnName="Cost_Price" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Book_Title" ColumnName="Book_Title" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Tracking_ID" ColumnName="Tracking_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Add_Stock_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.Add_Stock_Table">
+              <MappingFragment StoreEntitySet="Add_Stock_Table">
+                <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Total_Stock" ColumnName="Total_Stock" />
+                <ScalarProperty Name="New_Stock" ColumnName="New_Stock" />
+                <ScalarProperty Name="Existing_Stock" ColumnName="Existing_Stock" />
+                <ScalarProperty Name="Tracking_ID" ColumnName="Tracking_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Finish_Order_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.Finish_Order_Table">
+              <MappingFragment StoreEntitySet="Finish_Order_Table">
+                <ScalarProperty Name="Balance_Amount" ColumnName="Balance_Amount" />
+                <ScalarProperty Name="Paid_Amount" ColumnName="Paid_Amount" />
+                <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Net_Amount" ColumnName="Net_Amount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.Login_Table">
+              <MappingFragment StoreEntitySet="Login_Table">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UC_ManageExpence_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.UC_ManageExpence_Table">
+              <MappingFragment StoreEntitySet="UC_ManageExpence_Table">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Expence_Title" ColumnName="Expence_Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UC_ManageUser_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.UC_ManageUser_Table">
+              <MappingFragment StoreEntitySet="UC_ManageUser_Table">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UC_Sales_Table">
+            <EntityTypeMapping TypeName="Jumail_ProjectModel.UC_Sales_Table">
+              <MappingFragment StoreEntitySet="UC_Sales_Table">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Tracking_ID" ColumnName="Tracking_ID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Book_Title" ColumnName="Book_Title" />
+                <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
